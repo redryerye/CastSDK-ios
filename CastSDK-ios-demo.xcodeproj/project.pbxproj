@@ -12,9 +12,12 @@
 		1C694E0C21FC7D0400FA1FA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C694E0A21FC7D0400FA1FA7 /* Main.storyboard */; };
 		1C694E0E21FC7D0400FA1FA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C694E0D21FC7D0400FA1FA7 /* Assets.xcassets */; };
 		1C694E1121FC7D0400FA1FA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C694E0F21FC7D0400FA1FA7 /* LaunchScreen.storyboard */; };
+		B132F5A73519D596DE1BE372 /* Pods_CastSDK_ios_demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44CFA312177E1F0A5E8563F1 /* Pods_CastSDK_ios_demo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		056A61AB90BA529CDAB1081D /* Pods-CastSDK-ios-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CastSDK-ios-demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-CastSDK-ios-demo/Pods-CastSDK-ios-demo.release.xcconfig"; sourceTree = "<group>"; };
+		1B59AAF330F01C3D3BE734F2 /* Pods-CastSDK-ios-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CastSDK-ios-demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CastSDK-ios-demo/Pods-CastSDK-ios-demo.debug.xcconfig"; sourceTree = "<group>"; };
 		1C694E0321FC7D0400FA1FA7 /* CastSDK-ios-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CastSDK-ios-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C694E0621FC7D0400FA1FA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C694E0821FC7D0400FA1FA7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		1C694E0D21FC7D0400FA1FA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1C694E1021FC7D0400FA1FA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1C694E1221FC7D0400FA1FA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44CFA312177E1F0A5E8563F1 /* Pods_CastSDK_ios_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CastSDK_ios_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B132F5A73519D596DE1BE372 /* Pods_CastSDK_ios_demo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				1C694E0521FC7D0400FA1FA7 /* CastSDK-ios-demo */,
 				1C694E0421FC7D0400FA1FA7 /* Products */,
+				5B4FB04985052E1399F847BC /* Pods */,
+				2269C21A53402DFA3DE0CE01 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,23 @@
 			path = "CastSDK-ios-demo";
 			sourceTree = "<group>";
 		};
+		2269C21A53402DFA3DE0CE01 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				44CFA312177E1F0A5E8563F1 /* Pods_CastSDK_ios_demo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5B4FB04985052E1399F847BC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1B59AAF330F01C3D3BE734F2 /* Pods-CastSDK-ios-demo.debug.xcconfig */,
+				056A61AB90BA529CDAB1081D /* Pods-CastSDK-ios-demo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1C694E1521FC7D0400FA1FA7 /* Build configuration list for PBXNativeTarget "CastSDK-ios-demo" */;
 			buildPhases = (
+				1094123CBB086CFF181895F8 /* [CP] Check Pods Manifest.lock */,
 				1C694DFF21FC7D0400FA1FA7 /* Sources */,
 				1C694E0021FC7D0400FA1FA7 /* Frameworks */,
 				1C694E0121FC7D0400FA1FA7 /* Resources */,
+				B303FFAAEAD4036C23BB4B64 /* [CP] Embed Pods Frameworks */,
+				FC2DC0B62C40F27666E04527 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,6 +157,77 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1094123CBB086CFF181895F8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CastSDK-ios-demo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B303FFAAEAD4036C23BB4B64 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CastSDK-ios-demo/Pods-CastSDK-ios-demo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CastSDK-ios-demo/Pods-CastSDK-ios-demo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC2DC0B62C40F27666E04527 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CastSDK-ios-demo/Pods-CastSDK-ios-demo-resources.sh",
+				"${PODS_ROOT}/google-cast-sdk/GoogleCastSDK-ios-4.3.4_static/GoogleCast.framework/GoogleCastCoreResources.bundle",
+				"${PODS_ROOT}/google-cast-sdk/GoogleCastSDK-ios-4.3.4_static/GoogleCast.framework/GoogleCastUIResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleCastCoreResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleCastUIResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CastSDK-ios-demo/Pods-CastSDK-ios-demo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1C694DFF21FC7D0400FA1FA7 /* Sources */ = {
@@ -272,6 +370,7 @@
 		};
 		1C694E1621FC7D0400FA1FA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B59AAF330F01C3D3BE734F2 /* Pods-CastSDK-ios-demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +386,7 @@
 		};
 		1C694E1721FC7D0400FA1FA7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 056A61AB90BA529CDAB1081D /* Pods-CastSDK-ios-demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

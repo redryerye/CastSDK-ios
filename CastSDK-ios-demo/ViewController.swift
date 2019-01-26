@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleCast
 
 class ViewController: UIViewController {
 
