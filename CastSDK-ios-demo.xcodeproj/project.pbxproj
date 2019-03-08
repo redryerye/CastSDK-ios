@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C57F58A22314C8100155322 /* ChromeCastListner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C57F58922314C8100155322 /* ChromeCastListner.swift */; };
 		1C694E0721FC7D0400FA1FA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C694E0621FC7D0400FA1FA7 /* AppDelegate.swift */; };
 		1C694E0921FC7D0400FA1FA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C694E0821FC7D0400FA1FA7 /* ViewController.swift */; };
 		1C694E0C21FC7D0400FA1FA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C694E0A21FC7D0400FA1FA7 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* Begin PBXFileReference section */
 		056A61AB90BA529CDAB1081D /* Pods-CastSDK-ios-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CastSDK-ios-demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-CastSDK-ios-demo/Pods-CastSDK-ios-demo.release.xcconfig"; sourceTree = "<group>"; };
 		1B59AAF330F01C3D3BE734F2 /* Pods-CastSDK-ios-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CastSDK-ios-demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CastSDK-ios-demo/Pods-CastSDK-ios-demo.debug.xcconfig"; sourceTree = "<group>"; };
+		1C57F58922314C8100155322 /* ChromeCastListner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChromeCastListner.swift; sourceTree = "<group>"; };
 		1C694E0321FC7D0400FA1FA7 /* CastSDK-ios-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CastSDK-ios-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C694E0621FC7D0400FA1FA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C694E0821FC7D0400FA1FA7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				1C694E0D21FC7D0400FA1FA7 /* Assets.xcassets */,
 				1C694E0F21FC7D0400FA1FA7 /* LaunchScreen.storyboard */,
 				1C694E1221FC7D0400FA1FA7 /* Info.plist */,
+				1C57F58922314C8100155322 /* ChromeCastListner.swift */,
 			);
 			path = "CastSDK-ios-demo";
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 			files = (
 				1C694E0921FC7D0400FA1FA7 /* ViewController.swift in Sources */,
 				1C694E0721FC7D0400FA1FA7 /* AppDelegate.swift in Sources */,
+				1C57F58A22314C8100155322 /* ChromeCastListner.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

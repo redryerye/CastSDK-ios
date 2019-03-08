@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleCast
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        GCKLogger.sharedInstance().delegate = self as? GCKLoggerDelegate
+        
         return true
     }
 
@@ -42,5 +45,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+}
+
+extension AppDelegate: GCKLoggerDelegate {
+    
+    func logMessage(_ message: String, at level: GCKLoggerLevel, fromFunction function: String, location: String) {
+        print("message_from_chromeCast: \(message)")
+    }
 }
 
