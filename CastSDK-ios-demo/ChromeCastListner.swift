@@ -11,4 +11,5 @@ import GoogleCast
 
 class ChromoCastListner {
     
+    var castButton: UIButton?
 }
