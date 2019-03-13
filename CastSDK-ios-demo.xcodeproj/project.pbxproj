@@ -13,7 +13,6 @@
 		1C694E0C21FC7D0400FA1FA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C694E0A21FC7D0400FA1FA7 /* Main.storyboard */; };
 		1C694E0E21FC7D0400FA1FA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C694E0D21FC7D0400FA1FA7 /* Assets.xcassets */; };
 		1C694E1121FC7D0400FA1FA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C694E0F21FC7D0400FA1FA7 /* LaunchScreen.storyboard */; };
-		5AA92856570A74EBACD54C59 /* Pods_CastSDK_ios_demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44CFA312177E1F0A5E8563F1 /* Pods_CastSDK_ios_demo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +34,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5AA92856570A74EBACD54C59 /* Pods_CastSDK_ios_demo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
