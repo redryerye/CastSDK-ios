@@ -13,6 +13,7 @@
 		1C694E0C21FC7D0400FA1FA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C694E0A21FC7D0400FA1FA7 /* Main.storyboard */; };
 		1C694E0E21FC7D0400FA1FA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C694E0D21FC7D0400FA1FA7 /* Assets.xcassets */; };
 		1C694E1121FC7D0400FA1FA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C694E0F21FC7D0400FA1FA7 /* LaunchScreen.storyboard */; };
+		534FD373E0785ECA1893D80E /* Pods_CastSDK_ios_demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44CFA312177E1F0A5E8563F1 /* Pods_CastSDK_ios_demo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				534FD373E0785ECA1893D80E /* Pods_CastSDK_ios_demo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,8 +102,6 @@
 				1C694DFF21FC7D0400FA1FA7 /* Sources */,
 				1C694E0021FC7D0400FA1FA7 /* Frameworks */,
 				1C694E0121FC7D0400FA1FA7 /* Resources */,
-				B303FFAAEAD4036C23BB4B64 /* [CP] Embed Pods Frameworks */,
-				FC2DC0B62C40F27666E04527 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -180,52 +180,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B303FFAAEAD4036C23BB4B64 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-CastSDK-ios-demo/Pods-CastSDK-ios-demo-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CastSDK-ios-demo/Pods-CastSDK-ios-demo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FC2DC0B62C40F27666E04527 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-CastSDK-ios-demo/Pods-CastSDK-ios-demo-resources.sh",
-				"${PODS_ROOT}/google-cast-sdk/GoogleCastSDK-ios-4.3.4_static/GoogleCast.framework/GoogleCastCoreResources.bundle",
-				"${PODS_ROOT}/google-cast-sdk/GoogleCastSDK-ios-4.3.4_static/GoogleCast.framework/GoogleCastUIResources.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleCastCoreResources.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleCastUIResources.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CastSDK-ios-demo/Pods-CastSDK-ios-demo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
