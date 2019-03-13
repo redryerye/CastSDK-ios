@@ -10,14 +10,20 @@ import UIKit
 import GoogleCast
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, GCKLoggerDelegate {
 
     var window: UIWindow?
-
+    let kReceiverAppID = kGCKDefaultMediaReceiverApplicationID
+    let kDebugLoggingEnabled = true
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        GCKLogger.sharedInstance().delegate = self as? GCKLoggerDelegate
+        let criteria = GCKDiscoveryCriteria(applicationID: kReceiverAppID)
+        let options = GCKCastOptions(discoveryCriteria: criteria)
+        GCKCastContext.setSharedInstanceWith(options)
+        
+        // Enable logger
+        GCKLogger.sharedInstance().delegate = self
         
         return true
     }
@@ -44,13 +50,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
-}
-
-extension AppDelegate: GCKLoggerDelegate {
-    
+    // MARK: - GCKLoggerDelegate
     func logMessage(_ message: String, at level: GCKLoggerLevel, fromFunction function: String, location: String) {
-        print("message_from_chromeCast: \(message)")
+        if(kDebugLoggingEnabled) {
+            print(function + " - " + message)
+        }
     }
 }
-
