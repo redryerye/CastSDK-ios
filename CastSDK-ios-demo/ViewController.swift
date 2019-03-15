@@ -51,12 +51,10 @@ class ViewController: UIViewController, GCKSessionManagerListener, GCKRemoteMedi
     }
     
     func sendImage() {
+        
         let metadata = GCKMediaMetadata()
-        metadata.setString("Big Buck Bunny (2008)", forKey: kGCKMetadataKeyTitle)
-        metadata.setString("Big Buck Bunny tells the story of a giant rabbit with a heart bigger than " +
-            "himself. When one sunny day three rodents rudely harass him, something " +
-            "snaps... and the rabbit ain't no bunny anymore! In the typical cartoon " +
-            "tradition he prepares the nasty rodents a comical revenge.",
+        metadata.setString("Random Orange Flower (2019)", forKey: kGCKMetadataKeyTitle)
+        metadata.setString("from CastSDK-ios-demo",
                            forKey: kGCKMetadataKeySubtitle)
         metadata.addImage(GCKImage(url: URL(string: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg")!,
                                    width: 480,

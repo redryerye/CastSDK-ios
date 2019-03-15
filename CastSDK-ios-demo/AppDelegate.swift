@@ -25,6 +25,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GCKLoggerDelegate {
         // Enable logger
         GCKLogger.sharedInstance().delegate = self
         
+        let castStyle = GCKUIStyle.sharedInstance()
+        castStyle.castViews.deviceControl.iconTintColor = UIColor.gray
+
+        
         return true
     }
 
