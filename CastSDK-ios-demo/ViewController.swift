@@ -9,15 +9,22 @@
 import UIKit
 import GoogleCast
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, GCKSessionManagerListener, GCKRemoteMediaClientListener, GCKRequestDelegate {
     
     @IBOutlet weak var demoLabel: UILabel!
+    
+    private var mediaInformation: GCKMediaInformation?
+    private var sessionManager: GCKSessionManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         setCastButton()
+        
+        sessionManager = GCKCastContext.sharedInstance().sessionManager
+        sessionManager.add(self)
+        
         
     }
 
@@ -35,8 +42,14 @@ class ViewController: UIViewController {
         self.view.addSubview(castButton)
         
         castButton.center = CGPoint(x: view.center.x, y: view.center.y + 100)
-        
-        
+    }
+    
+    @IBAction func askForCurrentSession(_ sender: Any) {
+        print("current session: \(String(describing: sessionManager.currentSession))")
+    }
+    
+    // MARK: - GCKSessionManagerListener
+    func sessionManager(_ sessionManager: GCKSessionManager, didStart session: GCKSession) {
+        print(#function)
     }
 }
-
