@@ -26,8 +26,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GCKLoggerDelegate {
         GCKLogger.sharedInstance().delegate = self
         
         let castStyle = GCKUIStyle.sharedInstance()
+        
+        // Style for device chooser
         castStyle.castViews.deviceControl.iconTintColor = UIColor.gray
-
+        castStyle.castViews.deviceControl.backgroundColor = UIColor.init(hex: "40BBBD")
+        castStyle.castViews.deviceControl.buttonTextColor = UIColor.init(hex: "E6EEBD")
+        castStyle.castViews.deviceControl.headingTextColor = UIColor.init(hex: "E6EEBD")
+        castStyle.castViews.deviceControl.captionTextColor = UIColor.white
+        
+        // Style for mini media control
+        castStyle.castViews.mediaControl.miniController.backgroundColor = UIColor.init(hex: "E6EEBD")
+        castStyle.castViews.mediaControl.miniController.buttonTextColor = UIColor.init(hex: "E6EEBD")
+        castStyle.castViews.mediaControl.miniController.headingTextColor = UIColor.black
+        castStyle.castViews.mediaControl.miniController.captionTextColor = UIColor.gray
+        castStyle.castViews.mediaControl.miniController.iconTintColor = UIColor.gray
+        
+        let appStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let navigationController = appStoryboard.instantiateViewController(withIdentifier: "MainNavigationController")
+        let castContainerVC = GCKCastContext.sharedInstance().createCastContainerController(for: navigationController)
+        castContainerVC.miniMediaControlsItemEnabled = true
+        
+        // Style for miniMediaVC
+        castContainerVC.view.backgroundColor = UIColor.init(hex: "E6EEBD")
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = castContainerVC
+        window?.makeKeyAndVisible()
         
         return true
     }
@@ -59,5 +83,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GCKLoggerDelegate {
         if(kDebugLoggingEnabled) {
             print(function + " - " + message)
         }
+    }
+}
+
+extension UIColor {
+    convenience init(hex: String, alpha: CGFloat) {
+        let v = hex.map { String($0) } + Array(repeating: "0", count: max(6 - hex.count, 0))
+        let r = CGFloat(Int(v[0] + v[1], radix: 16) ?? 0) / 255.0
+        let g = CGFloat(Int(v[2] + v[3], radix: 16) ?? 0) / 255.0
+        let b = CGFloat(Int(v[4] + v[5], radix: 16) ?? 0) / 255.0
+        self.init(red: r, green: g, blue: b, alpha: alpha)
+    }
+    
+    convenience init(hex: String) {
+        self.init(hex: hex, alpha: 1.0)
     }
 }

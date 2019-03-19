@@ -12,13 +12,24 @@ import GoogleCast
 class ViewController: UIViewController, GCKSessionManagerListener, GCKRemoteMediaClientListener, GCKRequestDelegate {
     
     @IBOutlet weak var demoLabel: UILabel!
+    @IBOutlet weak var logLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var castButton: UIButton!
+    @IBOutlet weak var circleImageView: UIImageView!
+    
+    private var isConnected: Bool = false
+    
+    let castImage = UIImage(named: "cast")
+    let waitImage = UIImage(named: "waiting")
     
     private var mediaInformation: GCKMediaInformation?
     private var sessionManager: GCKSessionManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        logLabel.text = ""
+        castButton.setImage(waitImage, for: .normal)
         
         setCastButton()
         
@@ -34,12 +45,11 @@ class ViewController: UIViewController, GCKSessionManagerListener, GCKRemoteMedi
     func setCastButton() {
 
         let castButton = GCKUICastButton(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-        castButton.tintColor = UIColor.blue
-        
+        castButton.tintColor = UIColor.black
         
         self.view.addSubview(castButton)
         
-        castButton.center = CGPoint(x: view.center.x, y: view.center.y + 100)
+        castButton.center = CGPoint(x: self.circleImageView.center.x, y: self.circleImageView.center.y + 20)
     }
     
     func loadImage() {
@@ -50,25 +60,35 @@ class ViewController: UIViewController, GCKSessionManagerListener, GCKRemoteMedi
         }
     }
     
+    @IBAction func castButtonAction(_ sender: Any) {
+        if sessionManager.currentSession != nil {
+            isConnected = true
+            setCastButtonImage()
+        }
+        
+        loadImage()
+    }
+    
+    
     func sendImage() {
         
         let metadata = GCKMediaMetadata()
-        metadata.setString("Random Orange Flower (2019)", forKey: kGCKMetadataKeyTitle)
+        metadata.setString("try! Swift 2019", forKey: kGCKMetadataKeyTitle)
         metadata.setString("from CastSDK-ios-demo",
                            forKey: kGCKMetadataKeySubtitle)
-        metadata.addImage(GCKImage(url: URL(string: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg")!,
+        metadata.addImage(GCKImage(url: URL(string: "https://connpass-tokyo.s3.amazonaws.com/thumbs/19/20/19200cc7e95eb5a8a2418add78b11d6b.png")!,
                                    width: 480,
                                    height: 360))
         
         // Define information about the media item.
-        let url = URL(string: "https://www.gstatic.com/webp/gallery3/1.png")
+        let url = URL(string: "https://www.lanches.co.jp/wp-content/uploads/2018/03/try_swift.png")
         guard let mediaURL = url else {
             print("invalid mediaURL")
             return
         }
         
         let mediaInfoBuilder = GCKMediaInformationBuilder(contentURL: mediaURL)
-        mediaInfoBuilder.contentID = "https://www.gstatic.com/webp/gallery3/1.png"
+        mediaInfoBuilder.contentID = "https://www.lanches.co.jp/wp-content/uploads/2018/03/try_swift.png"
         mediaInfoBuilder.streamType = GCKMediaStreamType.none
         mediaInfoBuilder.contentType = "image/png"
         mediaInfoBuilder.metadata = metadata
@@ -80,14 +100,26 @@ class ViewController: UIViewController, GCKSessionManagerListener, GCKRemoteMedi
         
     }
     
-    @IBAction func askForCurrentSession(_ sender: Any) {
-        print("current session: \(String(describing: sessionManager.currentSession))")
-        
-        loadImage()
-    }
-    
     // MARK: - GCKSessionManagerListener
     func sessionManager(_ sessionManager: GCKSessionManager, didStart session: GCKSession) {
         print(#function)
+        isConnected = true
+        
+        setCastButtonImage()
+    }
+    
+    func sessionManager(_ sessionManager: GCKSessionManager, didEnd session: GCKSession, withError error: Error?) {
+        print(#function)
+        isConnected = false
+        
+        setCastButtonImage()
+    }
+    
+    func setCastButtonImage() {
+        if isConnected {
+            self.castButton.setImage(castImage, for: .normal)
+        } else {
+            self.castButton.setImage(waitImage, for: .normal)
+        }
     }
 }

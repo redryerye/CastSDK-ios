@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="62s-Wa-at6">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -18,40 +18,98 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="try-swift-logo" translatesAutoresizingMaskIntoConstraints="NO" id="sxv-yJ-7AA">
+                                <rect key="frame" x="87.5" y="293" width="200" height="81"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chrome Cast SDK Demo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1IT-e6-lRy">
-                                <rect key="frame" x="29" y="170" width="317.5" height="36"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                <color key="textColor" red="0.72941176470000002" green="0.45882352939999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="81" y="382" width="213.5" height="25"/>
+                                <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="15"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rMM-YB-8zX">
-                                <rect key="frame" x="38" y="494" width="299" height="30"/>
-                                <color key="backgroundColor" red="0.52119006850000005" green="1" blue="0.5721586045" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Ask for current session on sessionManager ">
-                                    <color key="titleColor" red="0.89019607840000003" green="0.4039215686" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgB-Jv-MSB">
+                                <rect key="frame" x="173.5" y="637" width="28.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8zM-zG-pOm">
+                                <rect key="frame" x="122.5" y="497" width="130" height="130"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="1AA-Hu-hLf"/>
+                                    <constraint firstAttribute="width" constant="130" id="lGO-uA-9uX"/>
+                                </constraints>
+                                <state key="normal" image="cast"/>
                                 <connections>
-                                    <action selector="askForCurrentSession:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QXa-j6-URk"/>
+                                    <action selector="castButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="51v-tw-tZt"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle" translatesAutoresizingMaskIntoConstraints="NO" id="Pxk-zl-wOE">
+                                <rect key="frame" x="152.5" y="144" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="Rcq-IO-2rP"/>
+                                    <constraint firstAttribute="height" constant="70" id="rXf-lw-q1W"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cast Button will appear above if Cast Device is found" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEr-F7-jOq">
+                                <rect key="frame" x="34.5" y="222" width="306" height="15"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.25098039220000001" green="0.73333333329999995" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="1IT-e6-lRy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="Gau-2Z-A2w"/>
-                            <constraint firstItem="1IT-e6-lRy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JY3-Nw-GSI"/>
-                            <constraint firstItem="rMM-YB-8zX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="h9g-Gx-aJ0"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="rMM-YB-8zX" secondAttribute="bottom" constant="145" id="usJ-kC-l7f"/>
+                            <constraint firstAttribute="bottom" secondItem="8zM-zG-pOm" secondAttribute="bottom" constant="40" id="4Ox-Wv-fPd"/>
+                            <constraint firstItem="sxv-yJ-7AA" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="4qz-yB-ZvK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xgB-Jv-MSB" secondAttribute="bottom" constant="9" id="5zi-qD-7pv"/>
+                            <constraint firstItem="xgB-Jv-MSB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="A6G-1Q-PtV"/>
+                            <constraint firstItem="Pxk-zl-wOE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="H9n-my-pkB"/>
+                            <constraint firstItem="Pxk-zl-wOE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="KgO-E8-FWb"/>
+                            <constraint firstItem="1IT-e6-lRy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Riz-YO-xL8"/>
+                            <constraint firstItem="8zM-zG-pOm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="amE-0Q-Abz"/>
+                            <constraint firstItem="sxv-yJ-7AA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dzZ-YI-qb0"/>
+                            <constraint firstItem="aEr-F7-jOq" firstAttribute="top" secondItem="Pxk-zl-wOE" secondAttribute="bottom" constant="8" id="flm-hV-2X2"/>
+                            <constraint firstItem="1IT-e6-lRy" firstAttribute="top" secondItem="sxv-yJ-7AA" secondAttribute="bottom" constant="8" id="h7v-Xh-o27"/>
+                            <constraint firstItem="aEr-F7-jOq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="w7b-vc-h31"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="wPE-mD-c2H"/>
                     <connections>
+                        <outlet property="castButton" destination="8zM-zG-pOm" id="5uY-2Y-FqF"/>
+                        <outlet property="circleImageView" destination="Pxk-zl-wOE" id="d9f-iQ-2Xd"/>
                         <outlet property="demoLabel" destination="1IT-e6-lRy" id="uDr-PT-7Ql"/>
+                        <outlet property="imageView" destination="sxv-yJ-7AA" id="hVJ-9z-IO2"/>
+                        <outlet property="logLabel" destination="xgB-Jv-MSB" id="2Gq-zm-9go"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="2957.5999999999999" y="133.5832083958021"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8dQ-TE-vKF">
+            <objects>
+                <navigationController storyboardIdentifier="MainNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="62s-Wa-at6" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vTJ-je-dA8">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.90196078430000004" green="0.93333333330000001" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="cFL-aV-dmo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cqt-ad-N6X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="2018.4000000000001" y="133.5832083958021"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cast" width="241" height="241"/>
+        <image name="circle" width="241" height="241"/>
+        <image name="try-swift-logo" width="200" height="81"/>
+    </resources>
 </document>
