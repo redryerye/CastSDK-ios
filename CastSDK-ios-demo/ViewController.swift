@@ -28,6 +28,12 @@ class ViewController: UIViewController, GCKSessionManagerListener, GCKRemoteMedi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let kReceiverAppID = kGCKDefaultMediaReceiverApplicationID
+        let kDebugLoggingEnabled = true
+        let criteria = GCKDiscoveryCriteria(applicationID: kReceiverAppID)
+        let options = GCKCastOptions(discoveryCriteria: criteria)
+        GCKCastContext.setSharedInstanceWith(options)
+        
         logLabel.text = ""
         castButton.setImage(waitImage, for: .normal)
         
